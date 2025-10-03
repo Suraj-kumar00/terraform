@@ -1,0 +1,63 @@
+# =============================================================================
+# Production Environment Configuration Example
+# =============================================================================
+# Copy this file to terraform.tfvars and update the values according to your needs
+# terraform.tfvars is ignored by git for security reasons
+
+# =============================================================================
+# AWS Configuration
+# =============================================================================
+aws_region = "us-east-1"  # AWS region where resources will be created
+
+# =============================================================================
+# Environment Configuration
+# =============================================================================
+environment  = "prod"   # Environment name (dev/staging/prod)
+project_name = "myapp"  # Project name used for resource naming
+
+# =============================================================================
+# Network Configuration
+# =============================================================================
+vpc_cidr = "10.2.0.0/16"  # VPC CIDR block for production environment
+
+# =============================================================================
+# EC2 Configuration
+# =============================================================================
+web_instance_type = "t3.medium"  # Instance type for web servers
+app_instance_type = "t3.medium"  # Instance type for application servers
+key_name          = "myapp-key-prod"  # SSH key pair name
+
+# =============================================================================
+# Microservices Configuration
+# =============================================================================
+# List of microservices for ECR repositories
+microservices = [
+  "frontend",
+  "backend"
+]
+
+# =============================================================================
+# SSH Key Configuration
+# =============================================================================
+public_key_path = "~/.ssh/myapp_key_prod.pub"  # Path to SSH public key
+
+# =============================================================================
+# Additional Configuration (Optional)
+# =============================================================================
+# Uncomment and modify these variables if needed
+
+# # ECR Configuration (Production settings)
+# ecr_name_suffix = "-prod"
+# ecr_image_tag_mutability = "IMMUTABLE"  # Use IMMUTABLE for production
+# ecr_force_delete = false  # Set to false for production safety
+# ecr_max_image_count = 10
+# ecr_untagged_image_days = 1
+#
+# # Tags
+# common_tags = {
+#   Environment = "prod"
+#   Project     = "myapp"
+#   ManagedBy   = "terraform"
+#   Owner       = "devops-team"
+#   CostCenter  = "engineering"
+# }

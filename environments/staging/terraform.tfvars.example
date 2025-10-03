@@ -1,0 +1,49 @@
+# =============================================================================
+# Staging Environment Configuration Example
+# =============================================================================
+# Copy this file to terraform.tfvars and update the values according to your needs
+# terraform.tfvars is ignored by git for security reasons
+
+# =============================================================================
+# AWS Configuration
+# =============================================================================
+aws_region = "us-east-1"  # AWS region where resources will be created
+
+# =============================================================================
+# Environment Configuration
+# =============================================================================
+environment  = "staging"  # Environment name (dev/staging/prod)
+project_name = "myapp"    # Project name used for resource naming
+
+# =============================================================================
+# Network Configuration
+# =============================================================================
+vpc_cidr = "10.1.0.0/16"  # VPC CIDR block for staging environment
+
+# =============================================================================
+# EC2 Configuration
+# =============================================================================
+web_instance_type = "t3.small"   # Instance type for web servers
+app_instance_type = "t3.small"   # Instance type for application servers
+key_name          = "myapp-key-staging"  # SSH key pair name
+
+# =============================================================================
+# SSH Key Configuration
+# =============================================================================
+public_key_path = "~/.ssh/myapp_key_staging.pub"  # Path to SSH public key
+
+# =============================================================================
+# Additional Configuration (Optional)
+# =============================================================================
+# Uncomment and modify these variables if needed
+
+# # S3 Configuration
+# enable_s3_versioning = true
+# 
+# # Tags
+# common_tags = {
+#   Environment = "staging"
+#   Project     = "myapp"
+#   ManagedBy   = "terraform"
+#   Owner       = "devops-team"
+# }

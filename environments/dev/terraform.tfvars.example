@@ -1,0 +1,67 @@
+# =============================================================================
+# Development Environment Configuration Example
+# =============================================================================
+# Copy this file to terraform.tfvars and update the values according to your needs
+# terraform.tfvars is ignored by git for security reasons
+
+# =============================================================================
+# AWS Configuration
+# =============================================================================
+aws_region = "us-east-1"  # AWS region where resources will be created
+
+# =============================================================================
+# Environment Configuration
+# =============================================================================
+environment = "dev"  # Environment name (dev/staging/prod)
+
+# =============================================================================
+# EKS Cluster Configuration
+# =============================================================================
+cluster_name       = "my-eks-dev"      # Name of the EKS cluster
+kubernetes_version = "1.31"            # Kubernetes version for EKS cluster
+
+# =============================================================================
+# Network Configuration
+# =============================================================================
+vpc_cidr             = "10.0.0.0/16"                    # VPC CIDR block
+public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]  # Public subnet CIDR blocks
+private_subnet_cidrs = ["10.0.3.0/24", "10.0.4.0/24"]  # Private subnet CIDR blocks
+
+# =============================================================================
+# EKS Node Group Configuration
+# =============================================================================
+instance_types = ["t3.medium"]  # EC2 instance types for worker nodes
+desired_size   = 2               # Desired number of worker nodes
+max_size       = 4               # Maximum number of worker nodes
+min_size       = 1               # Minimum number of worker nodes
+
+# =============================================================================
+# Microservices Configuration
+# =============================================================================
+# List of microservices for ECR repositories
+microservices = [
+  "frontend",
+  "backend"
+]
+
+# =============================================================================
+# Additional Configuration (Optional)
+# =============================================================================
+# Uncomment and modify these variables if needed
+
+# project_name = "myapp"
+# 
+# # ECR Configuration
+# ecr_name_suffix = "-dev"
+# ecr_image_tag_mutability = "MUTABLE"
+# ecr_force_delete = true
+# ecr_max_image_count = 5
+# ecr_untagged_image_days = 3
+#
+# # Tags
+# common_tags = {
+#   Environment = "dev"
+#   Project     = "myapp"
+#   ManagedBy   = "terraform"
+#   Owner       = "devops-team"
+# }

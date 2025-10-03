@@ -1,0 +1,98 @@
+# =============================================================================
+# Terraform .gitignore - Comprehensive Security and Best Practices
+# =============================================================================
+
+# Terraform state files - NEVER commit these to version control
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Terraform variable files - May contain sensitive data
+*.tfvars
+*.tfvars.json
+
+# Exception: Allow example variable files
+!*.tfvars.example
+!terraform.tfvars.example
+
+# Terraform directories and cache
+.terraform/
+.terraform.lock.hcl
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Terraform plan files - May contain sensitive data
+*.tfplan
+*.tfplan.*
+
+# Override files - Usually contain local customizations
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI configuration files
+.terraformrc
+terraform.rc
+
+# Terragrunt cache
+.terragrunt-cache/
+
+# =============================================================================
+# IDE and Editor Files
+# =============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.vim/
+
+# =============================================================================
+# OS Generated Files
+# =============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# =============================================================================
+# Environment and Secret Files
+# =============================================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# =============================================================================
+# Logs and Temporary Files
+# =============================================================================
+*.log
+*.tmp
+*.temp
+*.backup
+*.bak
+
+# =============================================================================
+# Testing and Development
+# =============================================================================
+testing/
+test-results/
+coverage/
+.nyc_output
+
+# =============================================================================
+# Dependencies (if using any)
+# =============================================================================
+node_modules/
+.npm
+.yarn-integrity
